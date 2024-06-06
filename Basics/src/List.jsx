@@ -3,7 +3,7 @@ function List() {
 
   const items = fruits.map((fruit) => <li>{fruit}</li>);
 
-  return <ul>{items}</ul>;
+  return <ul>{items }</ul>;
 }
 
 export default List;
