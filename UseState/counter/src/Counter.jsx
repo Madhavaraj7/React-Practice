@@ -4,7 +4,13 @@ function Counter() {
   const [count, setCount] = useState(0);
 
   const increment = () => {
-    setCount(count + 1);
+    setCount(count + 2);
+    // setCount((curr)=>{
+    //   return curr+1
+    // })
+    // setCount((curr)=>{
+    //   return curr+1
+    // })
   };
 
   const decrement = () => {

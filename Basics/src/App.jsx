@@ -1,16 +1,12 @@
-// import Card from "./Card.jsx";
-// import Button from "./Button.jsx";
-// import Student from "./Students.jsx";
-
-// import UserGreeting from "./UserGreeting.jsx";
-// import List from "./List.jsx";
-
+import Students from "./Students.jsx";
+import Greeting from "./UserGreeting.jsx"; 
 
 
 function App() {
   return (
     <>
-     <List/>
+      <Students name="liston" age="24" />
+      <Greeting isLoggedIn={false} username="Madhav" /> 
     </>
   );
 }

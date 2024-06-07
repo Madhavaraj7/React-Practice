@@ -1,36 +1,15 @@
-import Proptypes from "prop-types";
+import PropTypes from "prop-types";
 
-function UserGreeting(props) {
-  //   if (props.isLoggedin) {
-  //     return <h2>Welcome {props.userName}</h2>;
-  //   } else {
-  //     return <h2>Please login to continue</h2>;
-  //   }
+function Greeting(props) {
+  const welcomeMessage = <h2>Welcome {props.username}</h2>;
 
-  const welcomeMessage = (
-    <h2 className="welcome-message">Welcome {props.userName}</h2>
-  );
-  const LoginMessage = (
-    <h2 className="Login-message">Please login to continue</h2>
-  );
-
-  return props.isLoggedin ? welcomeMessage : LoginMessage;
-
-  //   return props.isLoggedin ? (
-  //     <h2 className="welcome-message">Welcome {props.userName}</h2>
-  //   ) : (
-  //     <h2 className="Login-message">Please login to continue</h2>
-  //   );
+  const loginPrompt = <h2>Login please</h2>;
+  return props.isLoggedIn ? welcomeMessage : loginPrompt;
 }
 
-UserGreeting.Proptypes = {
-  isLoggedin: Proptypes.bool,
-  userName: Proptypes.string,
+Greeting.propTypes = {
+  username: PropTypes.string,
+  isLoggedIn: PropTypes.bool 
 };
 
-UserGreeting.defaultProps = {
-  isLoggedin: false,
-  userName: "Guest",
-};
-
-export default UserGreeting;
+export default Greeting;
