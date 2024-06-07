@@ -13,6 +13,7 @@ function Counter() {
     }
   };
 
+  
   const reset = () => {
     setCount(0);
   };
