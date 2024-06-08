@@ -2,7 +2,7 @@ import Students from "./Students.jsx";
 import Greeting from "./UserGreeting.jsx"; 
 
 
-function App() {
+function App() { 
   return (
     <>
       <Students name="liston" age="24" />
