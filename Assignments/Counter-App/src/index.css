@@ -1,0 +1,25 @@
+.countDiv{
+  
+  text-align: center;
+  width: 25em;
+  height: 10em;
+  background-color: #9ce4ee;
+  border: 2px solid  #000000;
+  border-radius: 12px;
+  margin-bottom: 2.5em;
+}
+
+.insideDiv{
+  position: relative;
+  text-align: center;
+  top: 50%;
+  margin-bottom: 15px;
+  font-size: large;
+  font-weight: 800;
+}
+
+.insideFlex{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
