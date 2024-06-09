@@ -1,0 +1,45 @@
+
+.formDiv{
+  height: 6em;
+  width: 27em;
+  padding: 20px 10px;
+  margin: 10px;
+  background-color: hsl(216, 100%, 50%);
+  color: white;
+  border-radius: 15px;
+}
+
+.inputName{
+  text-align: center;
+  margin-top: 25px;
+  padding: 5px 10px;
+  border-radius: 6px;
+  width: 25em;
+  margin-bottom: 10px;
+  color: #0c0a09;
+  font-weight: 800;
+  font-size: small;
+  background-color:azure;
+
+}
+
+.submitBtn{
+  padding: 5px 10px;
+  border: #0c0a09;
+  border-radius: 5px;
+  background-color: #69f100;
+  color: whitesmoke;
+  cursor: pointer;
+}
+
+
+.insertVal{
+  display: none;
+  border:1px solid #0c0a09;
+  padding: 10px 20px;
+  border-radius: 10px;
+  background-color: rgb(249, 26, 26) ;
+  color: white;
+  font-size: large;
+  font-family: 'Courier New', Courier, monospace;
+}
