@@ -1,13 +1,29 @@
-import Students from "./Students.jsx";
-import Greeting from "./UserGreeting.jsx"; 
+import React, { useState } from "react";
+
+import ChildComponent from "./ChildComponent";
+
+function App() {
+ const [count,setCount] = useState(0);
+
+ const [inputValue,setInputValue] = useState("")
+
+ const [submitText, SetSubmitText] = useState("");
 
 
-function App() { 
   return (
     <>
-      <Students name="liston" age="24" />
-      <Greeting isLoggedIn={false} username="Madhav" /> 
+
+    <p>{count}</p>
+
+    {/* <p>{inputValue}</p> */}
+
+
+
+    <ChildComponent setCount={setCount} setInputValue={setInputValue} inputValue={inputValue} submitText={submitText} SetSubmitText={SetSubmitText}/>
+    <p>{submitText}</p>
+    
     </>
+   
   );
 }
 

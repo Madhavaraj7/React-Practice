@@ -1,19 +1,12 @@
-import Counter from "./Counter";
-
-import Practice from "./Practice";
-
-
+import React, { useState } from "react";
+import Child from "./child";
 function App() {
+  const [count, setCount] = useState(0);
   return (
     <>
-      {/* <Counter />
-       */}
+      <p>{count}</p>
 
-       <Practice username="Madhav" age="24"/>
-
-
-      
-
+      <Child setCount={setCount} />
     </>
   );
 }

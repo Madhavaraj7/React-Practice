@@ -1,67 +1,93 @@
 import React, { useState, useEffect, useRef } from "react";
 
 function Practice(props) {
-  const [count, setCount] = useState(1);
-
+  const [count, setCount] = useState(0);
   const [data, setData] = useState("");
-  const [fetchdata, SetFetch] = useState(false);
+  const inputRef = useRef("");
+  const [address, setAddress] = useState("");
+  const [submittedName, setSubmittedName] = useState("");
 
-  const [name, Setname] = useState("");
-  const [input, setInput] = useState();
+  const [name, setName] = useState("please login");
+  const [login, setlogin] = useState("login");
 
-  const inputRef = useRef("")
+  const [backgroundColor, setBackgroundcolor] = useState("#000000");
+  const [color, setColor] = useState("#808080");
 
-  function handleCountChange() {
-    setCount((c) => {
-      if (c === 5) {
-        SetFetch(true);
-      } else {
-        setData("");
-      }
-      return c + 1;
-    });
-  }
-
-  function handleNameChange(event) {
-    Setname(event.target.value);
-  }
-  function display() {
-    setInput(name);
-    Setname("");
-    inputRef.current.style.backgroundColor = "red"
+  function handleIncrementChange() {
+    setCount((c) => c + 1);
   }
 
   useEffect(() => {
-    if (fetchdata) {
+    if (count === 5) {
       fetch("https://jsonplaceholder.typicode.com/users/1")
         .then((res) => res.json())
         .then((data) => setData(data.name));
-      return SetFetch(false);
+    } else {
+      setData("");
     }
-  }),
-    [fetchdata];
+  }, [count]);
+
+  function display() {
+    inputRef.current.style.backgroundColor = "red";
+  }
+
+  function handleAddressChange(event) {
+    setAddress(event.target.value);
+  }
+
+  function displayAddress() {
+    setSubmittedName(address);
+  }
+
+  function displayLogin() {
+    if (login === "login") {
+      setlogin("logout");
+      setName("welcome");
+    } else {
+      setName("please login");
+      setlogin("login");
+    }
+  }
+
+  function ChangeColor() {
+    if (backgroundColor === "#000000") {
+      setBackgroundcolor("#808080");
+      setColor("#000000");
+    } else {
+      setBackgroundcolor("#000000");
+      setColor("#808080");
+    }
+  }
 
   return (
-    <div>
-      <h1>
-        {props.username}:{props.age}
-      </h1>
+    <>
+      <div>
+        <h1>{count}</h1>
+        <button onClick={handleIncrementChange}>Increment</button>
+        <h1>{data}</h1>
 
-      <h1>{count}</h1>
+        <input ref={inputRef} type="text" placeholder="Enter name" />
+        <button onClick={display}>Add</button>
 
-      <button onClick={handleCountChange}>Increment</button>
-      <h1>{data}</h1>
+        <input
+          type="text"
+          placeholder="Enter address"
+          value={address}
+          onChange={handleAddressChange}
+        />
 
-      <input ref={inputRef}
-        type="text"
-        placeholder="enter the name"
-        value={name}
-        onChange={handleNameChange}
-      />
-      <button onClick={display}>submit</button>
+        <button onClick={displayAddress}>Submit</button>
+        <h1>{submittedName}</h1>
 
-      <h1>{input}</h1>
-    </div>
+        <p>{name}</p>
+        <button onClick={displayLogin}>{login}</button>
+      </div>
+
+      <div style={{ backgroundColor: backgroundColor }}>
+        <p style={{ color: color }}>hello</p>
+      </div>
+      <button onClick={ChangeColor}>Change</button>
+    </>
   );
 }
 
