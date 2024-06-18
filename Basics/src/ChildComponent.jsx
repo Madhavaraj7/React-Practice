@@ -12,6 +12,7 @@ function ChildComponent({
 
   function increment() {
     setCount((count) => count + 1);
+    console.log("incrrement");
   }
 
   function handleChangeInput(event) {
@@ -55,7 +56,7 @@ function ChildComponent({
         <button onClick={changes}>{button}</button>
       </div>
       <br />
-      <button onClick={handlebackground} style={{ backgroundColor: color }}>change</button>
+      <button onMouseOver={handlebackground} style={{ backgroundColor: color ,cursor:"pointer"}}>change</button>
     </>
   );
 }

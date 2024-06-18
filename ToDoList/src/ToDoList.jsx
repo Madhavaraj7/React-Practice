@@ -1,9 +1,8 @@
-import React, { useState } from "react";
+import React, { useState,useEffect } from "react";
 
 function ToDoList() {
   const [tasks, setTasks] = useState([]);
   const [newTask, setNewTask] = useState("");
-  
 
   function handleInputChange(event) {
     setNewTask(event.target.value);
@@ -42,6 +41,9 @@ function ToDoList() {
       setTasks(updatedTask);
     }
   }
+
+
+ 
 
   return (
     <div className="to-do-list">
