@@ -1,18 +1,15 @@
-import React from 'react'
+import React from "react";
 
-function List({list,addList}) {
-    console.log("render");
+function List({ list, addList }) {
   return (
     <div>
-        <h2>List</h2>
-        {list.map((lists,index)=>{
-            return <p key={index}>{lists}</p>
-        })}
-
-        <button onClick={addList}>Add</button>
-
+      <h1>List</h1>
+      {list.map((lists, index) => {
+        return <p key={index}>{lists}</p>;
+      })}
+      <button onClick={addList}>Add Lists</button>
     </div>
-  )
+  );
 }
 
-export default React.memo(List)
+export default List;

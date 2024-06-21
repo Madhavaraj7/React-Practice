@@ -7,7 +7,6 @@ function reducerFn(state, action) {
       return { count: state.count + 1 };
     case "decrement":
       return { count: state.count - 1 };
-
     default:
       return state;
   }
@@ -19,15 +18,16 @@ function Example() {
   const increment = () => {
     dispatch({ type: "increment" });
   };
+
   const decrement = () => {
     dispatch({ type: "decrement" });
   };
 
   return (
     <div>
-      <button onClick={decrement}>decrement</button>
+      <button onClick={decrement}>Decrement</button>
       <p>{state.count}</p>
-      <button onClick={increment}>Increment</button>
+      <button onClick={increment}>increment</button>
     </div>
   );
 }

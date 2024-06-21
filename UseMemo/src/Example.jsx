@@ -1,31 +1,33 @@
-import React from "react";
-import { useMemo } from "react";
-import { useState } from "react";
+import React, { useMemo, useState } from "react";
 
 function Example() {
   const [count, setCount] = useState(0);
 
-  const [arr, setArr] = useState([1, 2, 3, 4, 5]);
+  const [numbers, setNumbers] = useState([1, 2, 3, 4, 5]);
 
-  function Maximum() {
-    console.log("rendering");
-    return Math.max(...arr);
-  }
+  const Increment = () => {
+    console.log("increment");
+    setCount((c) => c + 1);
+  };
+
+  const Maximum = () => {
+    console.log("Maximum");
+    return Math.max(...numbers);
+  };
 
   const memo = useMemo(() => {
     return Maximum();
-  }, [arr]);
+  }, [numbers]);
 
   return (
     <div>
       <p>{count}</p>
-      <button onClick={() => setCount(count + 1)}>Increment</button>
-      {/* <p>{Maximum()}</p> */}
-      <p>{memo}</p>
-      <button onClick={() => setArr([...arr, Math.round(count * 2)])}>
-        Add to array
-      </button>
-      <p>{JSON.stringify(arr)}</p>
+      <button onClick={Increment}>Increment</button>
+      {/* <p>{Maximum()}</p>
+       */}
+      <p>Maximum value:{memo}</p>
+      <button onClick={()=>setNumbers([...numbers,count*2])}>Add Numbers</button>
+      <p>{JSON.stringify(numbers)}</p>
     </div>
   );
 }
