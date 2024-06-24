@@ -1,33 +1,21 @@
 import React from "react";
 import { useReducer } from "react";
 
-function reducerFn(state, action) {
-  switch (action.type) {
-    case "increment":
-      return { count: state.count + 1 };
-    case "decrement":
-      return { count: state.count - 1 };
-    default:
-      return state;
-  }
+function reducerFn(state) {
+  return { count: state.count + 1 };
 }
 
 function Example() {
   const [state, dispatch] = useReducer(reducerFn, { count: 0 });
 
   const increment = () => {
-    dispatch({ type: "increment" });
-  };
-
-  const decrement = () => {
-    dispatch({ type: "decrement" });
+    dispatch();
   };
 
   return (
     <div>
-      <button onClick={decrement}>Decrement</button>
       <p>{state.count}</p>
-      <button onClick={increment}>increment</button>
+      <button onClick={increment}>Increment</button>
     </div>
   );
 }
