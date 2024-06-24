@@ -1,0 +1,5 @@
+.Navbar ul{
+    display: flex;
+    color: white;
+    gap: 20px;
+}
