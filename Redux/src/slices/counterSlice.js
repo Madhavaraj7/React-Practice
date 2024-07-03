@@ -1,14 +1,28 @@
-import { createSlice } from "@reduxjs/toolkit";
+// counterSlice.js
+import { createSlice } from '@reduxjs/toolkit';
 
 const counterSlice = createSlice({
-  name: "counter",
-  initialState: 0,
+  name: 'counter',
+  initialState: {
+    value: 0,
+    direction: 'increment', // 'increment' or 'decrement'
+  },
   reducers: {
     increment: (state) => {
-      return state + 1;
+      if (state.value < 10) {
+        state.value += 1;
+        if (state.value === 10) {
+          state.direction = 'decrement';
+        }
+      }
     },
     decrement: (state) => {
-      return state - 1;
+      if (state.value > 0) {
+        state.value -= 1;
+        if (state.value === 0) {
+          state.direction = 'increment';
+        }
+      }
     },
   },
 });
