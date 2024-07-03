@@ -8,6 +8,8 @@ const CounterComponent = () => {
   const counter = useSelector((state) => state.counter.value);
   const direction = useSelector((state) => state.counter.direction);
 
+  
+
   useEffect(() => {
     const interval = setInterval(() => {
       if (direction === 'increment') {
@@ -26,7 +28,6 @@ const CounterComponent = () => {
       <div className="space-x-4">
         <button
           onClick={() => dispatch(increment())}
-          className="px-4 py-2 bg-blue-500 text-white rounded"
         >
           Increment
         </button>
@@ -36,6 +37,7 @@ const CounterComponent = () => {
         >
           Decrement
         </button>
+
       </div>
     </div>
   );
